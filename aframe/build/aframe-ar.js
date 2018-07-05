@@ -3492,7 +3492,7 @@ THREEx.ArucoContext.prototype.detect = function (videoElement) {
 THREEx.ArucoContext.prototype.updateObject3D = function(object3D, arucoPosit, markerSize, detectedMarker){
         var markerCorners = detectedMarker.corners;
         var canvas = this.canvas
-
+		
         // convert the corners
         var poseCorners = new Array(markerCorners.length)
         for (var i = 0; i < markerCorners.length; ++ i){
@@ -3506,7 +3506,7 @@ THREEx.ArucoContext.prototype.updateObject3D = function(object3D, arucoPosit, ma
         // estimate pose from corners
         var pose = arucoPosit.pose(poseCorners);
 
-
+console.log('Updating object');
 	var rotation    = pose.bestRotation
 	var translation = pose.bestTranslation
 		
