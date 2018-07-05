@@ -7000,6 +7000,7 @@ ARjs.HitTesting.Result.prototype.apply = function(object3d){
  * @param {THREE.Object3D} object3d - the result to apply
  */
 ARjs.HitTesting.Result.prototype.applyPosition = function(object3d){
+	console.log("line 7003");
 	object3d.position.copy(this.position)
 
 	object3d.updateMatrix()
