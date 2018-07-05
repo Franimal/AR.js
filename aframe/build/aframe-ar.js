@@ -3556,7 +3556,7 @@ AR.Detector.prototype.datGUIOptions = {
 		minLength: 10,
 	},
 	notTooNear : {
-		minDist: 10,
+		minDist: 2,
 	},
 	findMarkers : {
 		warpSize: 49,
