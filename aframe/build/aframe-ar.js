@@ -3509,14 +3509,28 @@ THREEx.ArucoContext.prototype.updateObject3D = function(object3D, arucoPosit, ma
 
 	var rotation    = pose.bestRotation
 	var translation = pose.bestTranslation
-	
-        object3D.position.x =  translation[0];
-        object3D.position.y =  translation[1];
-        object3D.position.z = -translation[2];
-        
-        object3D.rotation.x = -Math.asin(-rotation[1][2]);
-        object3D.rotation.y = -Math.atan2(rotation[0][2], rotation[2][2]);
-        object3D.rotation.z =  Math.atan2(rotation[1][0], rotation[1][1]);
+		
+		var xPos = translation[0];
+		var yPos = translation[1];
+		var zPos = -translation[2];
+		
+		object3D.setAttribute('position', {x: Math.floor(xPos * 10) / 10 ,
+									    	y: Math.floor(xPos * 10) / 10 ,
+										    z: Math.floor(xPos * 10) / 10});
+        //object3D.position.x =  translation[0];
+        //object3D.position.y =  translation[1];
+        //object3D.position.z = -translation[2];
+
+		var xRot = -Math.asin(-rotation[1][2];
+		var yRot = -Math.atan2(rotation[0][2], rotation[2][2]);
+		var zRot = Math.atan2(rotation[1][0], rotation[1][1])});
+		
+		object3D.setAttribute('rotation', {x: Math.floor(xRot * 10) / 10,
+										y: Math.floor(yRot * 10) / 10,
+										z: Math.floor(zRot * 10) / 10;
+        //object3D.rotation.x = -Math.asin(-rotation[1][2]);
+        //object3D.rotation.y = -Math.atan2(rotation[0][2], rotation[2][2]);
+        //object3D.rotation.z =  Math.atan2(rotation[1][0], rotation[1][1]);
         
         object3D.scale.x = markerSize;
         object3D.scale.y = markerSize;
