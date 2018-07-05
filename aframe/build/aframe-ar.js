@@ -4311,6 +4311,7 @@ THREE.WebAR.rotateObject3D = function(normal1, normal2, object3d) {
 * @param {THREE.Object3D} object3d The object3d to be transformed so it is oriented according to the given plane.
 */
 THREE.WebAR.rotateObject3DWithPickingPlane = function(plane, object3d) {
+	console.log("rotateObject3DWithPickingPlane");
   if (plane instanceof THREE.Vector3 || plane instanceof THREE.Vector4) {
     THREE.WebAR._planeNormal.set(plane.x, plane.y, plane.z);
   }
@@ -4348,6 +4349,7 @@ THREE.WebAR.rotateObject3DWithPickingPlane = function(plane, object3d) {
 * @param {THREE.Object3D} object3d The object3d to be transformed so it is positioned according to the given point.
 */
 THREE.WebAR.positionObject3DWithPickingPoint = function(point, object3d) {
+	console.log("positionObject3DWithPickingPoint");
   if (point instanceof THREE.Vector3 || point instanceof THREE.Vector4) {
     object3d.position.set(point.x, point.y, point.z);
   }
