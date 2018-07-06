@@ -5338,7 +5338,7 @@ ARjs.Context.prototype.update = function(srcElement){
 	this._arMarkersControls.forEach(function(markerControls){
 		markerControls.object3d.visible = false
 	})
-	console.log("5341");
+	console.log('5341');
 	// process this frame
 	if(this.parameters.trackingBackend === 'artoolkit'){
 		this._updateArtoolkit(srcElement)
