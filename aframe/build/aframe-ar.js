@@ -5196,7 +5196,12 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	
 	function applyOneSlerpStep(){
 		//console.log(targetObject3d.position);
-		lastFewPositions.push({targetObject3d.position.x,targetObject3d.position.y,targetObject3d.position.z});
+		lastFewPositions.push(
+		{
+			x: targetObject3d.position.x, 
+			y: targetObject3d.position.y, 
+			z: targetObject3d.position.z
+		});
 		var lastValue = lastFewPositions.shift();
 		
 		var x = lastValue;
