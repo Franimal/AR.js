@@ -8770,8 +8770,9 @@ AFRAME.registerSystem('arjs', {
 			//////////////////////////////////////////////////////////////////////////////
 			//		honor .debugUIEnabled
 			//////////////////////////////////////////////////////////////////////////////
-			//if( _this.data.debugUIEnabled )	initDebugUI()
+			if( _this.data.debugUIEnabled )	initDebugUI()
 			function initDebugUI(){
+				return;
 				// get or create containerElement
 				var containerElement = document.querySelector('#arjsDebugUIContainer')
 				if( containerElement === null ){
