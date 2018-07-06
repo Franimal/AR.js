@@ -5193,8 +5193,15 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	}	
 	
 	function applyOneSlerpStep(){
-		console.log('SLERPING');
-		object3d.position.lerp(targetObject3d.position, parameters.lerpPosition)
+		
+		var targetPos = 
+		{
+			x: Math.floor(targetObject3d.position,x * 10) / 10 ,
+			y: Math.floor(targetObject3d.position.y * 10) / 10 ,
+			z: Math.floor(targetObject3d.position.z * 10) / 10
+		}//THETA SLERP
+		
+		object3d.position.lerp(targetPos, parameters.lerpPosition)
 		object3d.quaternion.slerp(targetObject3d.quaternion, parameters.lerpQuaternion)
 		object3d.scale.lerp(targetObject3d.scale, parameters.lerpScale)
 	}
