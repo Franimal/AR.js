@@ -6681,6 +6681,7 @@ var ARjs = ARjs || {}
  * @param {ARjs.Anchor} arAnchor - the anchor to user
  */
 ARjs.SessionDebugUI = function(arSession, tangoPointCloud){
+	return;
 	var trackingBackend = arSession.arContext.parameters.trackingBackend
 
 	this.domElement = document.createElement('div')
