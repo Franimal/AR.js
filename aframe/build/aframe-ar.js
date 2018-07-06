@@ -5198,6 +5198,7 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	return
 
 	function snapDirectlyToTarget(){
+		console.log(targetObject3d.position);
 		object3d.position.copy( targetObject3d.position )
 		object3d.quaternion.copy( targetObject3d.quaternion )
 		object3d.scale.copy( targetObject3d.scale )
