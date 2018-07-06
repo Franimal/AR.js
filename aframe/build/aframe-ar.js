@@ -3524,9 +3524,9 @@ console.log('Updating object');
         //object3D.position.y =  translation[1];
         //object3D.position.z = -translation[2];
 
-		var xRot = -Math.asin(-rotation[1][2];
+		var xRot = -Math.asin(-rotation[1][2]);
 		var yRot = -Math.atan2(rotation[0][2], rotation[2][2]);
-		var zRot = Math.atan2(rotation[1][0], rotation[1][1])});
+		var zRot = Math.atan2(rotation[1][0], rotation[1][1]);
 		
 		object3D.setAttribute('rotation', 
 		{
