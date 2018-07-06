@@ -5214,7 +5214,7 @@ ARjs.Context = THREEx.ArToolkitContext = function(parameters){
 		// debug - true if one should display artoolkit debug canvas, false otherwise
 		debug: false,
 		// the mode of detection - ['color', 'color_and_matrix', 'mono', 'mono_and_matrix']
-		detectionMode: 'color', //THETA change to mono if its broken
+		detectionMode: 'mono', //THETA change to mono if its broken
 		// type of matrix code - valid iif detectionMode end with 'matrix' - [3x3, 3x3_HAMMING63, 3x3_PARITY65, 4x4, 4x4_BCH_13_9_3, 4x4_BCH_13_5_5]
 		matrixCodeType: '3x3',
 
@@ -5224,15 +5224,15 @@ ARjs.Context = THREEx.ArToolkitContext = function(parameters){
 		// tune the maximum rate of pose detection in the source image
 		maxDetectionRate: 60,
 		// resolution of at which we detect pose in the source image
-		canvasWidth: 640,
-		canvasHeight: 480,
+		canvasWidth: 1280,
+		canvasHeight: 960,
 
 		// the patternRatio inside the artoolkit marker - artoolkit only
 		patternRatio: 0.5,
 
 		// enable image smoothing or not for canvas copy - default to true
 		// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
-		imageSmoothingEnabled : false,
+		imageSmoothingEnabled : true,
 	}
 	// parameters sanity check
 	console.assert(['artoolkit', 'aruco', 'tango'].indexOf(this.parameters.trackingBackend) !== -1, 'invalid parameter trackingBackend', this.parameters.trackingBackend)
@@ -6768,6 +6768,7 @@ ARjs.SessionDebugUI.AugmentedWebsiteURL = 'https://webxr.io/augmented-website'
  * @param {ARjs.Anchor} arAnchor - the anchor to user
  */
 ARjs.AnchorDebugUI = function(arAnchor){
+	return;
 	var _this = this 
 	var arSession = arAnchor.arSession
 	var trackingBackend = arSession.arContext.parameters.trackingBackend
