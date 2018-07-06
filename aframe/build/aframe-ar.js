@@ -5196,9 +5196,9 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 		console.log(targetObject3d.position);
 		var targetPos = 
 		{
-			x: Math.floor(targetObject3d.position.x * 10) / 10 ,
-			y: Math.floor(targetObject3d.position.y * 10) / 10 ,
-			z: Math.floor(targetObject3d.position.z * 10) / 10
+			x: Math.floor(targetObject3d.position.x * 100) / 100 ,
+			y: Math.floor(targetObject3d.position.y * 100) / 100 ,
+			z: Math.floor(targetObject3d.position.z * 100) / 100
 		}//THETA SLERP
 		
 		object3d.position.lerp(targetPos, parameters.lerpPosition)
@@ -8349,6 +8349,7 @@ AFRAME.registerComponent('arjs-anchor', {
 			//		honor .debugUIEnabled
 			//////////////////////////////////////////////////////////////////////////////
 			if( arjsSystem.data.debugUIEnabled ){
+				return;
 				// get or create containerElement
 				var containerElement = document.querySelector('#arjsDebugUIContainer')
 				if( containerElement === null ){
