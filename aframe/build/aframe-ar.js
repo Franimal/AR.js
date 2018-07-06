@@ -5193,6 +5193,7 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	}	
 	
 	function applyOneSlerpStep(){
+		console.log('SLERPING');
 		object3d.position.lerp(targetObject3d.position, parameters.lerpPosition)
 		object3d.quaternion.slerp(targetObject3d.quaternion, parameters.lerpQuaternion)
 		object3d.scale.lerp(targetObject3d.scale, parameters.lerpScale)
@@ -5213,7 +5214,7 @@ ARjs.Context = THREEx.ArToolkitContext = function(parameters){
 		// debug - true if one should display artoolkit debug canvas, false otherwise
 		debug: false,
 		// the mode of detection - ['color', 'color_and_matrix', 'mono', 'mono_and_matrix']
-		detectionMode: 'color',
+		detectionMode: 'color', //THETA change to mono if its broken
 		// type of matrix code - valid iif detectionMode end with 'matrix' - [3x3, 3x3_HAMMING63, 3x3_PARITY65, 4x4, 4x4_BCH_13_9_3, 4x4_BCH_13_5_5]
 		matrixCodeType: '3x3',
 
