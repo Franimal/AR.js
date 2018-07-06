@@ -5117,6 +5117,8 @@ THREEx.ArSmoothedControls.prototype.constructor = THREEx.ArSmoothedControls;
 //		update function
 //////////////////////////////////////////////////////////////////////////////
 
+var lastFewPositions = [{x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}]
+
 THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	var object3d = this.object3d
 	var parameters = this.parameters
@@ -5194,11 +5196,28 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	
 	function applyOneSlerpStep(){
 		//console.log(targetObject3d.position);
+		lastFewPositions.push({targetObject3d.position.x,targetObject3d.position.y,targetObject3d.position.z});
+		var lastValue = lastFewPositions.shift();
+		
+		var x = lastValue;
+		var y = lastValue;
+		var z = lastValue;
+		
+		for( var i = 0; i < lastFewPositions.length; i++ ){
+			x = x + lastFewPositions[i].x;
+			y = y + lastFewPositions[i].y;
+			z = z + lastFewPositions[i].z;
+		}
+		
+		x = x/(lastFewPositions.length+1);
+		y = y/(lastFewPositions.length+1);
+		z = z/(lastFewPositions.length+1);
+		
 		var targetPos = 
 		{
-			x: Math.floor(targetObject3d.position.x * 100) / 100 ,
-			y: Math.floor(targetObject3d.position.y * 100) / 100 ,
-			z: Math.floor(targetObject3d.position.z * 100) / 100
+			x: Math.floor(x * 100) / 100 ,
+			y: Math.floor(y * 100) / 100 ,
+			z: Math.floor(z * 100) / 100
 		}//THETA SLERP
 		
 		object3d.position.lerp(targetPos, parameters.lerpPosition)
