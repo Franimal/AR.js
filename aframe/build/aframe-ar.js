@@ -5117,7 +5117,16 @@ THREEx.ArSmoothedControls.prototype.constructor = THREEx.ArSmoothedControls;
 //		update function
 //////////////////////////////////////////////////////////////////////////////
 
-var lastFewPositions = [{x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}, {x: 0, y: 0, z: 0}]
+var lastFewPositions = [{x: 0, y: 0, z: 0}, 
+{x: 0, y: 0, z: 0}, 
+{x: 0, y: 0, z: 0}, 
+{x: 0, y: 0, z: 0}, 
+{x: 0, y: 0, z: 0},
+{x: 0, y: 0, z: 0},
+{x: 0, y: 0, z: 0},
+{x: 0, y: 0, z: 0},
+{x: 0, y: 0, z: 0},
+{x: 0, y: 0, z: 0}];
 
 THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	var object3d = this.object3d
@@ -5220,9 +5229,9 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 		
 		var targetPos = 
 		{
-			x: Math.floor(x * 100) / 100 ,
-			y: Math.floor(y * 100) / 100 ,
-			z: Math.floor(z * 100) / 100
+			x,
+			y,
+			z
 		}//THETA SLERP
 		
 		object3d.position.lerp(targetPos, parameters.lerpPosition)
