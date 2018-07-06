@@ -5232,9 +5232,9 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 			x,
 			y,
 			z
-		}//THETA SLERP
+		};//THETA SLERP
 		
-		object3d.position.lerp(targetPos, parameters.lerpPosition)
+		object3d.position.lerp(targetObject3d..position, parameters.lerpPosition)
 		object3d.quaternion.slerp(targetObject3d.quaternion, parameters.lerpQuaternion)
 		object3d.scale.lerp(targetObject3d.scale, parameters.lerpScale)
 	}
