@@ -5193,10 +5193,10 @@ THREEx.ArSmoothedControls.prototype.update = function(targetObject3d){
 	}	
 	
 	function applyOneSlerpStep(){
-		
+		console.log(targetObject3d.position);
 		var targetPos = 
 		{
-			x: Math.floor(targetObject3d.position,x * 10) / 10 ,
+			x: Math.floor(targetObject3d.position.x * 10) / 10 ,
 			y: Math.floor(targetObject3d.position.y * 10) / 10 ,
 			z: Math.floor(targetObject3d.position.z * 10) / 10
 		}//THETA SLERP
