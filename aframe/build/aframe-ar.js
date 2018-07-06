@@ -3506,9 +3506,9 @@ THREEx.ArucoContext.prototype.updateObject3D = function(object3D, arucoPosit, ma
         // estimate pose from corners
         var pose = arucoPosit.pose(poseCorners);
 
-console.log('Updating object');
-	var rotation    = pose.bestRotation
-	var translation = pose.bestTranslation
+		console.log('Updating object');
+		var rotation    = pose.bestRotation
+		var translation = pose.bestTranslation
 		
 		var xPos = translation[0];
 		var yPos = translation[1];
@@ -5344,6 +5344,8 @@ ARjs.Context.prototype.update = function(srcElement){
 	this._arMarkersControls.forEach(function(markerControls){
 		markerControls.object3d.visible = false
 	})
+	
+	console.log('5348 ################');
 
 	// process this frame
 	if(this.parameters.trackingBackend === 'artoolkit'){
