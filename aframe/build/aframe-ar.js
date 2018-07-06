@@ -3514,9 +3514,12 @@ console.log('Updating object');
 		var yPos = translation[1];
 		var zPos = -translation[2];
 		
-		object3D.setAttribute('position', {x: Math.floor(xPos * 10) / 10 ,
-									    	y: Math.floor(xPos * 10) / 10 ,
-										    z: Math.floor(xPos * 10) / 10});
+		object3D.setAttribute('position', 
+		{
+			x: Math.floor(xPos * 10) / 10 ,
+			y: Math.floor(xPos * 10) / 10 ,
+			z: Math.floor(xPos * 10) / 10
+		});
         //object3D.position.x =  translation[0];
         //object3D.position.y =  translation[1];
         //object3D.position.z = -translation[2];
@@ -3525,9 +3528,12 @@ console.log('Updating object');
 		var yRot = -Math.atan2(rotation[0][2], rotation[2][2]);
 		var zRot = Math.atan2(rotation[1][0], rotation[1][1])});
 		
-		object3D.setAttribute('rotation', {x: Math.floor(xRot * 10) / 10,
-										y: Math.floor(yRot * 10) / 10,
-										z: Math.floor(zRot * 10) / 10;
+		object3D.setAttribute('rotation', 
+		{
+			x: Math.floor(xRot * 10) / 10,
+			y: Math.floor(yRot * 10) / 10,
+			z: Math.floor(zRot * 10) / 10
+		});
         //object3D.rotation.x = -Math.asin(-rotation[1][2]);
         //object3D.rotation.y = -Math.atan2(rotation[0][2], rotation[2][2]);
         //object3D.rotation.z =  Math.atan2(rotation[1][0], rotation[1][1]);
@@ -5338,7 +5344,7 @@ ARjs.Context.prototype.update = function(srcElement){
 	this._arMarkersControls.forEach(function(markerControls){
 		markerControls.object3d.visible = false
 	})
-	console.log('5341');
+
 	// process this frame
 	if(this.parameters.trackingBackend === 'artoolkit'){
 		this._updateArtoolkit(srcElement)
